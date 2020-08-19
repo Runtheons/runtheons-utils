@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "runtheons-validate": "^1.2.0"
+    "runtheons-validate": "git+https://github.com/iamousseni/runtheons-validate.git"
   },
   "devDependencies": {},
   "scripts": {
