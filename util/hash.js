@@ -12,7 +12,7 @@ module.exports = new class runtheonsToken{
 		];
 	}
 	
-	encript64Bit(num){
+	encrypt64Bit(num){
 		var n = (num + this.n1)+"";
 		var tmp = n.split("");
 		
@@ -81,7 +81,7 @@ module.exports = new class runtheonsToken{
 		return n;
 	}
 
-	encript128Bit(num){
+	encrypt128Bit(num){
 		var n = this.encript64Bit(num);
 		var tmp = n.split("");
 		n = [];
