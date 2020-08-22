@@ -6,16 +6,21 @@ module.exports = (req, res, api) => {
   //metto in data i dati ricevuti nella query string
   Object.keys(req.params).forEach(function(key){
 	let value = req.params[key];	
-	if(""+parseInt(value) == value){
-		data[key] = parseInt(value);
+	if(""+Number(value) == value){
+		data[key] = Number(value);
 	}else{
-		data[key] = parseInt(value);
+		data[key] = value;
 	}
   });
   
   //metto in data i dati ricevuti nel request body
   Object.keys(req.body).forEach(function(key){
-    data[key] = req.body[key];
+	let value = req.body[key];	
+	if(""+Number(value) == value){
+		data[key] = Number(value);
+	}else{
+		data[key] = value;
+	}
   });
   
   //metto in data i dati ricevuti come files
