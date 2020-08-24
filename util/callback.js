@@ -35,9 +35,9 @@ module.exports = (req, res, api) => {
     if(valid.result)
       api.api(data, res);
     else
-      res.status(500).jsonp(valid.errors);
+      res.jsonp(valid.errors);
   }catch(e){
 	  console.log(e);
-    res.status(500).jsonp(e.path + ': ' + e.message);
+    res.jsonp(e.path + ': ' + e.message);
   }
 };
