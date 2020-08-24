@@ -31,7 +31,9 @@ module.exports = (req, res, api) => {
   }
   
   try{
-	var valid = validator.validate(api.schema, data);
+  var valid = validator.validate(api.schema, data);
+  console.log(api);
+  console.log(valid);
     if(valid.result)
       api.api(data, res);
     else
