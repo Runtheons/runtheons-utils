@@ -1,8 +1,9 @@
 const validator = require("runtheons-validate");
+console.log('callback pre inner');
 
 module.exports = (req, res, api) => {
   data = [];
-
+  console.log('callback inner');
   //metto in data i dati ricevuti nella query string
   Object.keys(req.params).forEach(function(key){
 	let value = req.params[key];	
@@ -32,7 +33,6 @@ module.exports = (req, res, api) => {
   
   try{
   var valid = validator.validate(api.schema, data);
-  console.log(api);
   console.log(valid);
     if(valid.result)
       api.api(data, res);
