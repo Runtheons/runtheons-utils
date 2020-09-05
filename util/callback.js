@@ -34,7 +34,7 @@ module.exports = (req, res, api) => {
     if(valid.result)
       api.api(data, res);
     else
-      res.jsonp(valid.errors);
+		res.json(ret({error:valid.errors}, false));
   }catch(e){
 	  console.log(e);
     res.jsonp(e.path + ': ' + e.message);
