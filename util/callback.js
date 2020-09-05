@@ -1,4 +1,5 @@
 const validator = require("runtheons-validate");
+const ret = require("./ret");
 
 module.exports = (req, res, api) => {
   data = [];
