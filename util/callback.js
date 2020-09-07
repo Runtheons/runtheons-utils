@@ -37,10 +37,11 @@ module.exports = (req, res, api) => {
         }
         try {
             var valid = validator.validate(api.schema, data);
-            if (valid.result)
-                api.api(data, res, req);
-            else
+            if (valid.result) {
+                api.api(data, res, req.session);
+            } else {
                 res.json(ret({ error: valid.errors }, false));
+            }
         } catch (e) {
             console.log(e);
             res.jsonp(e.path + ': ' + e.message);
@@ -62,6 +63,7 @@ function authen(req, auth) {
     */
     //..000000 = 0	-> Not logged
     //..000101 = 5	-> Logged as athlete
+    //..000111 = 7	-> Logged as athlete and fan -> IMPOSSIBLE
 
     var bit = (auth).toString(2);
     var length = 6;
@@ -87,6 +89,30 @@ function authen(req, auth) {
     //bit 1 -> Fan/Not Fan
     if (bit[1] == 1) {
         if (req.session.userType != 1) {
+            return false;
+        }
+    }
+    //bit 2 -> Athlete/Not Athlete
+    if (bit[2] == 1) {
+        if (req.session.userType != 2) {
+            return false;
+        }
+    }
+    //bit 3 -> Professionist/Not Professionist
+    if (bit[3] == 1) {
+        if (req.session.userType != 3) {
+            return false;
+        }
+    }
+    //bit 4 -> Coach/Not Coach
+    if (bit[4] == 1) {
+        if (req.session.userType != 4) {
+            return false;
+        }
+    }
+    //bit 5 -> Socuety/Not Socuety
+    if (bit[5] == 1) {
+        if (req.session.userType != 5) {
             return false;
         }
     }
