@@ -4,9 +4,8 @@ const ret = require("./ret");
 module.exports = (req, res, api) => {
 
     var authLevel = (api.auth != undefined ? api.auth : 0);
-    console.log(authLevel);
     var authorized = authen(req, authLevel);
-    console.log(authorized);
+
     if (authorized) {
         data = [];
         //metto in data i dati ricevuti nella query string
@@ -72,7 +71,6 @@ function authen(req, auth) {
     }
     bit = bit.split("");
     bit = bit.reverse(); //Inverto per leggere da dx a sx
-    console.log(bit);
 
     //bit 0 -> Logged/Not Logged
     if (bit[0] == 1) {
