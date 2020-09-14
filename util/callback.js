@@ -43,7 +43,7 @@ module.exports = (req, res, api) => {
             }
         } catch (e) {
             console.log(e);
-            res.jsonp(e.path + ': ' + e.message);
+            res.jsonp(ret({ error: e.path + ': ' + e.message }, false));
         }
     } else {
         res.json(ret({ error: "User non authorized" }, false));
@@ -75,12 +75,12 @@ function authen(req, auth) {
     //bit 0 -> Logged/Not Logged
     if (bit[0] == 1) {
         //Non loggato quando dovrebbe
-        if (!req.session.idUser) {
+        if (req.session.idUser == undefined) {
             return false;
         }
     } else {
         //Loggato quando non serve (login)
-        if (req.session.idUser) {
+        if (req.session.idUser != undefined) {
             return false;
         }
     }
