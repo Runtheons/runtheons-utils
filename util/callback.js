@@ -46,19 +46,19 @@ module.exports = (req, res, api) => {
             res.jsonp(ret({ error: e.path + ': ' + e.message }, false));
         }
     } else {
-        res.json(ret({ error: "User non authorized" }, false));
+        res.json(ret({}, false, "User non authorized"));
     }
 };
 
 function authen(req, auth) {
     /*
-    	.... for future
-    	IS_SOCIETY		0
-    	IS_COACH		0
-    	IS_PRO			0
-    	IS_ATHLETE		0
-    	IS_FAN			0
-    	LOGGED			0
+        .... for future
+        IS_SOCIETY		0
+        IS_COACH		0
+        IS_PRO			0
+        IS_ATHLETE		0
+        IS_FAN			0
+        LOGGED			0
     */
     //..000000 = 0	-> Not logged
     //..000101 = 5	-> Logged as athlete
