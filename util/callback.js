@@ -51,14 +51,26 @@ module.exports = (req, res, api) => {
 };
 
 function authen(req, auth) {
+    if (!Array.isArray(auth)) {
+        auth = [auth];
+    }
+    for (let i = 0; i < auth.length; i++) {
+        if (check(req, auth[i])) {
+            return true;
+        }
+    }
+    return false;
+}
+
+function check(req, auth) {
     /*
-        .... for future
-        IS_SOCIETY		0
-        IS_COACH		0
-        IS_PRO			0
-        IS_ATHLETE		0
-        IS_FAN			0
-        LOGGED			0
+    .... for future
+    IS_SOCIETY		0
+    IS_COACH		0
+    IS_PRO			0
+    IS_ATHLETE		0
+    IS_FAN			0
+    LOGGED			0
     */
     //..000000 = 0	-> Not logged
     //..000101 = 5	-> Logged as athlete
