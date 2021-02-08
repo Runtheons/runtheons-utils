@@ -1,1 +1,1 @@
-module.exports = require("./hash");
+module.exports = require("./TokenGenerator");

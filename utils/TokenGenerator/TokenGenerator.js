@@ -1,4 +1,4 @@
-module.exports = new class runtheonsToken {
+module.exports = new class TokenGenerator {
 
 	constructor() {
 		this.n1 = 10003794;
