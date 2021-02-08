@@ -1,23 +1,19 @@
 {
-  "name": "runtheons-util",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "dependencies": {
-    "runtheons-validate": "git+https://github.com/iamousseni/runtheons-validate.git"
-  },
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Zexal0807/runtheons-util.git"
-  },
-  "author": "Zexal0807",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Zexal0807/runtheons-util/issues"
-  },
-  "homepage": "https://github.com/Zexal0807/runtheons-util#readme"
+	"name": "@runtheons/utils",
+	"version": "2.0.0",
+	"description": "",
+	"main": "index.js",
+	"dependencies": {},
+	"devDependencies": {},
+	"scripts": {},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Zexal0807/runtheons-utils.git"
+	},
+	"author": "Zexal0807",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/Zexal0807/runtheons-utils/issues"
+	},
+	"homepage": "https://github.com/Zexal0807/runtheons-utils#readme"
 }
