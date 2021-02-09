@@ -1,3 +1,9 @@
 const ejs = require("ejs");
 
-module.exports = (filename, data, options, cb) => ejs.renderFile(filename, data, options, cb);
+exports.load = (filename, data, options) => {
+	return new Promise((resolve, reject) => {
+		ejs.renderFile(filename, data, options, function(err, html) {
+			resolve(html);
+		});
+	});
+};
