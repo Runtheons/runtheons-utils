@@ -1,10 +1,12 @@
 {
 	"name": "@runtheons/utils",
-	"version": "2.1.0",
+	"version": "2.2.0",
 	"description": "",
 	"main": "index.js",
 	"dependencies": {
-		"ejs": "^3.1.6"
+		"ejs": "^3.1.6",
+		"lodash": "^4.17.20",
+		"path": "^0.12.7"
 	},
 	"devDependencies": {},
 	"scripts": {},
