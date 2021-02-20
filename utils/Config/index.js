@@ -11,7 +11,5 @@ module.exports = (root) => {
 
 	var c = _.defaultsDeep(envConf, defaults);
 
-	console.log(c);
-
 	return c;
 }
