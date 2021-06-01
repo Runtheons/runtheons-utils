@@ -2,6 +2,7 @@ module.exports = new class TokenGenerator {
 
 	n1 = 10003794;
 	n2 = 239746;
+
 	letter = [
 		"p", "q", "e", "h", "l",
 		"o", "x", "b", "w", "f",
@@ -55,7 +56,6 @@ module.exports = new class TokenGenerator {
 		return parseInt(ret.join(""));
 	}
 
-
 	encrypt64Bit(num) {
 		var n = num + this.n1;
 
@@ -90,7 +90,6 @@ module.exports = new class TokenGenerator {
 
 		return n - this.n1;
 	}
-
 
 	encrypt128Bit(num) {
 		var n = this.encrypt64Bit(num);
