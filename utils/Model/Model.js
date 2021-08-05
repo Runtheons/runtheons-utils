@@ -40,6 +40,4 @@ class Model {
 	}
 }
 
-var a = new Model({ gino: "a", pippo_tell: "b", pippo_say: "c" });
-console.log(a);
 module.exports = Model;
