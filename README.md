@@ -173,7 +173,7 @@ class Child extends User {}
 
 User.addIsA(Child, (data) => {
   if (data.type == "CHILD") {
-    if (data.dateBirth < "2010-01-01") {
+    if (data.dateBirth > "2010-01-01") {
       data.type = "YOUNG CHILD";
     } else {
       data.type = "OLD CHILD";
@@ -190,7 +190,7 @@ var a = User.map({
   type: "STUDENT",
   name: "Mario",
   surname: "Rossi",
-  dateBirth: " 1980-05-12",
+  dateBirth: "1980-05-12",
 });
 console.log(a);
 /*
@@ -200,7 +200,7 @@ Student {
     type: "STUDENT",
     name: "Mario",
     surname: "Rossi",
-    dateBirth: " 1980-05-12"
+    dateBirth: "1980-05-12"
 }
 */
 
@@ -210,7 +210,7 @@ a = User.map({
   type: "TEACHER",
   name: "Mario",
   surname: "Rossi",
-  dateBirth: " 1980-05-12",
+  dateBirth: "1980-05-12",
 });
 console.log(a);
 /*
@@ -220,7 +220,7 @@ Teacher {
     type: "TEACHER",
     name: "Mario",
     surname: "Rossi",
-    dateBirth: " 1980-05-12"
+    dateBirth: "1980-05-12"
 }
 */
 
@@ -230,7 +230,7 @@ a = User.map({
   type: "CHILD",
   name: "Mario",
   surname: "Rossi",
-  dateBirth: " 1980-05-12",
+  dateBirth: "1980-05-12",
 });
 console.log(a);
 /*
@@ -240,7 +240,7 @@ Child {
     type: "OLD CHILD",
     name: "Mario",
     surname: "Rossi",
-    dateBirth: " 1980-05-12"
+    dateBirth: "1980-05-12"
 }
 */
 
@@ -250,7 +250,7 @@ a = User.map({
   type: "CHILD",
   name: "Mario",
   surname: "Rossi",
-  dateBirth: " 2012-05-12",
+  dateBirth: "2012-05-12",
 });
 console.log(a);
 /*
@@ -260,7 +260,7 @@ Child {
     type: "YOUNG CHILD",
     name: "Mario",
     surname: "Rossi",
-    dateBirth: " 1980-05-12"
+    dateBirth: "2012-05-12"
 }
 */
 ```
