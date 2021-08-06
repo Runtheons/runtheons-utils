@@ -15,7 +15,7 @@ class Model {
 	}
 
 	static map(data) {
-		Object.assign(this.config, this._config);
+		Object.assign(this._config, this.config);
 		Object.assign(this.includes, {});
 		var data = this._map(data);
 		this._include(data);
@@ -44,7 +44,7 @@ class Model {
 			var tmpObject = object;
 			var found;
 			do {
-				found = key.indexOf(this.config.separetor);
+				found = key.indexOf(this._config.separetor);
 				if (found >= 0) {
 					var pre = key.substring(0, found);
 					key = key.substring(found + 1);
@@ -65,7 +65,7 @@ class Model {
 			key = "" + key;
 			var tmpObject = data;
 			var pre = data;
-			var subkeys = key.split(this.config.includesSeparetor);
+			var subkeys = key.split(this._config.includesSeparetor);
 			for (var i = 0; i < subkeys.length - 1; i++) {
 				var subkey = subkeys[i];
 				tmpObject = tmpObject[subkey];
