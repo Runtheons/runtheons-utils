@@ -4,6 +4,8 @@ class Model {
 		includesSeparetor: ".",
 	};
 
+	static includes = {};
+
 	static config = {};
 
 	static isA = [];
