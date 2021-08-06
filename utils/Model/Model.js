@@ -3,13 +3,29 @@ class Model {
 		separetor: ".",
 		includesSeparetor: ".",
 	};
+
 	static config = {};
+
+	static isA = [];
+
+	static addIsA(model, check) {
+		this.isA.push({ model: model, check: check });
+	}
 
 	static map(data) {
 		Object.assign(this.config, this._config);
 		Object.assign(this.includes, {});
 		var data = this._map(data);
 		this._include(data);
+		var object = null;
+		this.isA.forEach((child) => {
+			if (child.check(data)) {
+				object = new child.model(data);
+			}
+		});
+		if (object != null) {
+			return object;
+		}
 		return new this(data);
 	}
 

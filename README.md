@@ -12,6 +12,7 @@ This reposity add some utils for Runtheons BackEnd
   - [Model](https://github.com/Zexal0807/runtheons-utils#model "Model")
     - [Model use](https://github.com/Zexal0807/runtheons-utils#model-use "Model use")
     - [Model includes](https://github.com/Zexal0807/runtheons-utils#model-includes "Model includes")
+    - [Model is-A](https://github.com/Zexal0807/runtheons-utils#model-is-a "Model is-A")
     - [Model config](https://github.com/Zexal0807/runtheons-utils#model-config "Model config")
 
 # Introduction
@@ -136,9 +137,137 @@ User {
 console.log(user.sport.getDescription());   // "Football"
 ```
 
-As you can see, in class you can specify some configuration
+### Model is-A
+
+You can define an is-A association, use `Model.addIsA` for adding and isA to the parent class
+In this method must provide, the sub class,
+
+```javascript
+Model.addIsA(<T extends Model> model, Function check) : void
+```
+
+```javascript
+check(object data) : boolean
+```
+
+Where check function, must return `true` if with these data, it's a sub
+
+Here a complete example
+
+```javascript
+class User extends Model {}
+
+class Student extends User {}
+
+User.addIsA(Student, (data) => {
+  return data.type == "STUDENT";
+});
+
+class Teacher extends User {}
+
+User.addIsA(Teacher, (data) => {
+  return data.type == "TEACHER";
+});
+
+class Child extends User {}
+
+User.addIsA(Child, (data) => {
+  if (data.type == "CHILD") {
+    if (data.dateBirth < "2010-01-01") {
+      data.type = "YOUNG CHILD";
+    } else {
+      data.type = "OLD CHILD";
+    }
+    return true;
+  }
+  return false;
+});
+// In this example if the user is a child, we edit the type in young or old
+
+var a = User.map({
+  id: 1,
+  email: "test@test.com",
+  type: "STUDENT",
+  name: "Mario",
+  surname: "Rossi",
+  dateBirth: " 1980-05-12",
+});
+console.log(a);
+/*
+Student {
+    id: 1,
+    email: "test@test.com",
+    type: "STUDENT",
+    name: "Mario",
+    surname: "Rossi",
+    dateBirth: " 1980-05-12"
+}
+*/
+
+a = User.map({
+  id: 1,
+  email: "test@test.com",
+  type: "TEACHER",
+  name: "Mario",
+  surname: "Rossi",
+  dateBirth: " 1980-05-12",
+});
+console.log(a);
+/*
+Teacher {
+    id: 1,
+    email: "test@test.com",
+    type: "TEACHER",
+    name: "Mario",
+    surname: "Rossi",
+    dateBirth: " 1980-05-12"
+}
+*/
+
+a = User.map({
+  id: 1,
+  email: "test@test.com",
+  type: "CHILD",
+  name: "Mario",
+  surname: "Rossi",
+  dateBirth: " 1980-05-12",
+});
+console.log(a);
+/*
+Child {
+    id: 1,
+    email: "test@test.com",
+    type: "OLD CHILD",
+    name: "Mario",
+    surname: "Rossi",
+    dateBirth: " 1980-05-12"
+}
+*/
+
+a = User.map({
+  id: 1,
+  email: "test@test.com",
+  type: "CHILD",
+  name: "Mario",
+  surname: "Rossi",
+  dateBirth: " 2012-05-12",
+});
+console.log(a);
+/*
+Child {
+    id: 1,
+    email: "test@test.com",
+    type: "YOUNG CHILD",
+    name: "Mario",
+    surname: "Rossi",
+    dateBirth: " 1980-05-12"
+}
+*/
+```
 
 ### Model config
+
+As you can see, in class you can specify some configuration
 
 | config            | Type                      | Description                                       |
 | ----------------- | ------------------------- | ------------------------------------------------- |

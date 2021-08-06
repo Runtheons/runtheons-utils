@@ -1,12 +1,64 @@
 const Model = require("./index");
 
-class B extends Model {}
+class Sport extends Model {}
+class Goal extends Model {}
+class Speciality extends Model {}
 
-class A extends Model {
+class User extends Model {
 	static includes = {
-		pippo: B,
+		asport: Sport,
+		agoal: Goal,
+		pgoal: Goal,
+		pspeciality: Speciality,
 	};
 }
 
-var a = A.map({ gino: 1, "pippo.a": 1, "pippo.b": 2 });
+class Professionist extends User {}
+
+User.addIsA(Professionist, (data) => {
+	if (data.type == "PROFESSIONIST") {
+		data.name = data.pname;
+		data.surname = data.psurname;
+		data.goal = data.pgoal;
+		data.speciality = data.pspeciality;
+
+		delete data.aname;
+		delete data.asurname;
+		delete data.agoal;
+		delete data.asport;
+		delete data.pname;
+		delete data.psurname;
+		delete data.pgoal;
+		delete data.pspeciality;
+
+		return true;
+	}
+	return false;
+});
+
+class Athlete extends User {}
+
+User.addIsA(Athlete, (data) => {
+	return data.type == "ATHLETE";
+});
+
+var a = User.map({
+	id: 1,
+	email: "test",
+	type: "PROFESSIONIST",
+	pname: "Mario",
+	psurname: "Rossi",
+	aname: null,
+	asurname: null,
+	"agoal.id": null,
+	"agoal.description": null,
+	"asport.id": null,
+	"asport.description": null,
+	"pgoal.id": 1,
+	"pgoal.description": "BO",
+	"pspeciality.id": 1,
+	"pspeciality.description": "BO",
+});
 console.log(a);
+
+console.log(Object.getPrototypeOf(a.constructor).name);
