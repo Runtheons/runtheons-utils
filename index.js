@@ -10,4 +10,5 @@ module.exports = {
 	TokenGenerator: require("./utils/TokenGenerator/index.js"),
 	TemplateManager: require("./utils/TemplateManager/index.js"),
 	Model: require("./utils/Model/index.js"),
+	Config: config(),
 };
