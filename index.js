@@ -7,9 +7,9 @@ var config = () => {
 };
 
 module.exports = {
-	TokenGenerator: require("./utils/TokenGenerator/index.js"),
-	TemplateManager: require("./utils/TemplateManager/index.js"),
 	CouponCode: require("./utils/CouponCode/index.js"),
 	Logger: require("./utils/Logger/index.js"),
+	TokenGenerator: require("./utils/TokenGenerator/index.js"),
+	TemplateManager: require("./utils/TemplateManager/index.js"),
 	Config: config(),
 };
