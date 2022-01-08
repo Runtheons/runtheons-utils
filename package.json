@@ -1,6 +1,6 @@
 {
 	"name": "@runtheons/utils",
-	"version": "2.3.2",
+	"version": "2.4.0",
 	"description": "",
 	"main": "index.js",
 	"dependencies": {
@@ -8,8 +8,19 @@
 		"lodash": "^4.17.21",
 		"path": "^0.12.7"
 	},
-	"devDependencies": {},
-	"scripts": {},
+	"devDependencies": {
+		"jest": "^27.2.2"
+	},
+	"jest": {
+		"testEnvironment": "node",
+		"coveragePathIgnorePatterns": [
+			"/node_modules/"
+		]
+	},
+	"scripts": {
+		"test": "jest --verbose ./*",
+		"testOnFile": "jest --json --outputFile=test.json ./*"
+	},
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/Zexal0807/runtheons-utils.git"
