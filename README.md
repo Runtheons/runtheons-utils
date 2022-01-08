@@ -10,11 +10,7 @@ This reposity add some utils for Runtheons BackEnd
   - [Installation](https://github.com/Zexal0807/runtheons-utils#installation)
 - [Utility](https://github.com/Zexal0807/runtheons-utils#utility)
   - [CouponCode](https://github.com/Zexal0807/runtheons-utils#coupon-code)
-  - [Model](https://github.com/Zexal0807/runtheons-utils#model "Model")
-    - [Model use](https://github.com/Zexal0807/runtheons-utils#model-use "Model use")
-    - [Model includes](https://github.com/Zexal0807/runtheons-utils#model-includes "Model includes")
-    - [Model is-A](https://github.com/Zexal0807/runtheons-utils#model-is-a "Model is-A")
-    - [Model config](https://github.com/Zexal0807/runtheons-utils#model-config "Model config")
+  - [Logger](https://github.com/Zexal0807/runtheons-utils#logger)
 
 # Introduction
 
