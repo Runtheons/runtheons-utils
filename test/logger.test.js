@@ -1,8 +1,7 @@
 const assert = require("assert");
-
 const fs = require("fs");
 
-const Logger = require("./index");
+const { Logger } = require("./../index");
 
 describe("Token Generator", function() {
 	it("Example", async() => {

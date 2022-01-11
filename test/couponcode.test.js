@@ -1,6 +1,6 @@
 const assert = require("assert");
 
-const CouponCode = require("./index");
+const { CouponCode } = require("./../index");
 
 describe("Coupon Code", function() {
 	it("Example", async() => {
