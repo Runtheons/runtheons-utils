@@ -1,4 +1,5 @@
 const assert = require("assert");
+const { execSync } = require("child_process");
 const fs = require("fs");
 
 const { Logger } = require("./../index");
