@@ -5,7 +5,7 @@ const { Logger } = require("./../index");
 
 describe("Logger", function() {
 	it("Example", async() => {
-		fs.emptyDirSync("./debug");
+		execSync("rm ./debug/* -rf");
 
 		Logger.printDebugFile("TEST");
 
