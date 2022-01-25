@@ -6,12 +6,13 @@ const { Logger } = require("./../index");
 
 describe("Logger", function() {
 	it("Example", async() => {
-		execSync("rm ./debug/* -rf");
+		fs.rmdirSync("./debug", { recursive: true });
 
-		Logger.printDebugFile("TEST");
+		await Logger.printDebugFile("TEST");
 
 		var files = fs.readdirSync("./debug");
 
 		assert.equal(files.length, 1);
+		fs.rmdirSync("./debug", { recursive: true });
 	});
 });
