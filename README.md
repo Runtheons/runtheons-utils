@@ -4,13 +4,13 @@ This reposity add some utils for Runtheons BackEnd
 
 # Index
 
-- [Introduction](https://github.com/Zexal0807/runtheons-utils#introduction)
-- [Getting started](https://github.com/Zexal0807/runtheons-utils#getting-started)
-  - [Prerequisites](https://github.com/Zexal0807/runtheons-utils#prerequisites)
-  - [Installation](https://github.com/Zexal0807/runtheons-utils#installation)
-- [Utility](https://github.com/Zexal0807/runtheons-utils#utility)
-  - [CouponCode](https://github.com/Zexal0807/runtheons-utils#coupon-code)
-  - [Logger](https://github.com/Zexal0807/runtheons-utils#logger)
+- [Introduction](https://github.com/Runtheons/runtheons-utils#introduction)
+- [Getting started](https://github.com/Runtheons/runtheons-utils#getting-started)
+  - [Prerequisites](https://github.com/Runtheons/runtheons-utils#prerequisites)
+  - [Installation](https://github.com/Runtheons/runtheons-utils#installation)
+- [Utility](https://github.com/Runtheons/runtheons-utils#utility)
+  - [CouponCode](https://github.com/Runtheons/runtheons-utils#coupon-code)
+  - [Logger](https://github.com/Runtheons/runtheons-utils#logger)
 
 # Introduction
 
@@ -25,7 +25,7 @@ This repository contains the source code and official documentation of the endpo
 
 ## Installation
 
-1. `npm install https://github.com/Zexal0807/runtheons-utils#v2.4.0` to add the package to the project
+1. `npm install https://github.com/Runtheons/runtheons-utils#v2.5.1` to add the package to the project
 
 # Utility
 
