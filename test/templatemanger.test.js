@@ -12,4 +12,13 @@ describe("Template Manager", function() {
 		assert.equal(html, "Ciao Zexal0807");
 		fs.rmSync("./test.ejs");
 	});
+
+	it("With incorrect data", async() => {
+		fs.writeFileSync("./test.ejs", `Ciao <%= data %>`);
+		const html = await TemplateManager.load("./test.ejs", {
+			sata: "Zexal0807",
+		});
+		assert.equal(html, "");
+		fs.rmSync("./test.ejs");
+	});
 });

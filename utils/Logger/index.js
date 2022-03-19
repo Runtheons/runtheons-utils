@@ -17,11 +17,15 @@ module.exports = new(class Logger {
 
 			path += ".txt";
 			fs.open(path, "a", function(e, file) {
-				if (e) throw e;
+				if (e) {
+					throw e;
+				}
 				var str = require("util").inspect(debug);
 				str = str + "\n\r";
 				fs.write(file, str, function(er) {
-					if (er) throw er;
+					if (er) {
+						throw er;
+					}
 					fs.close(file, function() {
 						return resolve();
 					});

@@ -32,7 +32,9 @@ module.exports = new(class TokenGenerator {
 	];
 
 	sort(n) {
-		if (typeof n != "string") n = n + "";
+		if (typeof n != "string") {
+			n = n + "";
+		}
 
 		for (var i = n.length; i < 8; i++) {
 			n = "0" + n;
@@ -54,7 +56,9 @@ module.exports = new(class TokenGenerator {
 	}
 
 	unsort(n) {
-		if (typeof n != "string") n = n + "";
+		if (typeof n != "string") {
+			n = n + "";
+		}
 
 		for (var i = n.length; i < 8; i++) {
 			n = "0" + n;
