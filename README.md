@@ -25,7 +25,7 @@ This repository contains the source code and official documentation of the endpo
 
 ## Installation
 
-1. `npm install https://github.com/Runtheons/runtheons-utils#v2.5.1` to add the package to the project
+1. `npm install https://github.com/Runtheons/runtheons-utils#v2.5.2` to add the package to the project
 
 # Utility
 
