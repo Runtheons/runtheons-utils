@@ -25,7 +25,7 @@ This repository contains the source code and official documentation of the endpo
 
 ## Installation
 
-1. `npm install https://github.com/Runtheons/runtheons-utils#v2.5.2` to add the package to the project
+1. `npm install https://github.com/Runtheons/runtheons-utils#v2.5.3` to add the package to the project
 
 # Utility
 
@@ -36,7 +36,7 @@ It is necessary to define an object schema that defines the input you want to re
 This class allow to generate a coupon code, use `generate` method to generate it
 
 ```javascript
-const { CouponCode } = require("@runtheons/utils");
+const { CouponCode } = require('@runtheons/utils');
 console.log(CouponCode.generate());
 
 /* Here some example
@@ -51,6 +51,6 @@ console.log(CouponCode.generate());
 This class allow to print on a file a message, use `printOnDebugFile` method to do it
 
 ```javascript
-const { Logger } = require("@runtheons/utils");
-Logger.printDebugFile("Message");
+const { Logger } = require('@runtheons/utils');
+Logger.printDebugFile('Message');
 ```
